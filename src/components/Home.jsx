@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import ListaPropiedades from './ListaPropiedades'
 import '../styles/home.css'
 import FiltrarPropiedad from './FiltrarPropiedad'
-
+import Propiedad from './Propiedad'
+import '../styles/listaPropiedades.css'
 
 const Home = (props) => {
     const [searchProp,setSearchProp] = useState("");
@@ -17,7 +18,23 @@ const Home = (props) => {
                 }} />
             </div>
             
-            <FiltrarPropiedad data={props.data}/>
+            <div className="lista-propiedades">
+            {
+                props.data.filter((element)=>{
+                    console.log(element.city);
+                    if(searchProp == ""){
+                        return element;
+                    }else if (element.city.toLowerCase().includes(searchProp.toLowerCase())){
+                        return element;
+                    }
+                }).map((element,key) => {
+                    return(
+                        <Propiedad data={element} key={key} />
+                    )
+                })
+            }
+            </div>
+
         </div>
     )
 }
