@@ -20,6 +20,7 @@ const Propiedad = (props) => {
         </div>
       </div>
       <span className="title-propiedad">{props.data.title}</span>
+      <span className="title-city"><b>City: </b>{props.data.city}</span>
     </div>
   );
 };

@@ -36,3 +36,14 @@
   flex-direction: column;
   margin-top: 20px !important;
 }
+.search-input {
+  margin: 15px;
+  padding: 10px;
+}
+/*input{
+  border-radius: 15px;
+}*/
+input:hover {
+  border-color:thistle;
+  /*border-radius: 15px;*/
+}
